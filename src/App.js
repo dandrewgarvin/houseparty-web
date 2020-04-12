@@ -3,6 +3,8 @@ import { Switch } from 'react-router-dom';
 
 import history from './utils/history';
 
+import routes from './config/routes';
+
 import PermissionHandler from './services/PermissionHandler';
 import { store } from './services/Store';
 
@@ -15,7 +17,7 @@ function App() {
 
   return (
     <main id="App">
-      <Switch>{RouteHandler.generateRoutes({ context })}</Switch>
+      <Switch>{RouteHandler.generateRoutes({ context, routes })}</Switch>
     </main>
   );
 }

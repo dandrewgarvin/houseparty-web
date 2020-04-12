@@ -6,9 +6,7 @@
 
 // ========== INITIAL STATE ========= //
 const initialUserState = {
-  user: {
-    id: 'user:7',
-  },
+  user: null,
 };
 
 // ========== ACTION TYPES ========== //

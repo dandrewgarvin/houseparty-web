@@ -24,10 +24,10 @@ class PermissionHandler {
         path: Route.path,
         component: props => {
           if (this.checkPermissions(Route, props)) {
-            return <Route.privateComponent {...additionalProps} />;
+            return <Route.privateComponent {...props} {...additionalProps} />;
           } else {
             return Route.publicComponent ? (
-              <Route.publicComponent {...additionalProps} />
+              <Route.publicComponent {...props} {...additionalProps} />
             ) : (
               <Redirect to={routes.Home.path} />
             );
