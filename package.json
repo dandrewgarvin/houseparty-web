@@ -14,9 +14,13 @@
     "build": "react-scripts build",
     "lint": "eslint src",
     "format": "npm run prettier -- --write",
-    "precommit": "lint-staged",
     "prettier": "prettier \"**/*.+(ts|js|jsx|json|yml|yaml|scss|css)\"",
     "validate": "npm run lint && npm run prettier -- --list-different"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
