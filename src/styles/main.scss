@@ -1,12 +1,22 @@
-// ========== RESET & GLOBALS ========== //
+// ============= RESET ============= //
 @import './reset.css';
+
+// ============ GLOBALS ============ //
 @import './partials/variables.scss';
 @import './partials/globals.scss';
 @import './partials/mixins.scss';
 
 // ========== COMPONENTS ========== //
 // ======= ATOMS ======= //
+@import './components/atoms/Button.scss';
+
 // ===== MOLECULES ===== //
 // ===== ORGANISMS ===== //
 
-// ========== PAGES ========== //
+// ============ PAGES ============ //
+@import './pages/CreateEvent.scss';
+@import './pages/Dashboard.scss';
+@import './pages/Home.scss';
+@import './pages/Login.scss';
+@import './pages/Register.scss';
+@import './pages/ViewEvent.scss';

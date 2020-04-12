@@ -4,12 +4,12 @@
  * @copyright ControlBit Studios 2020. All rights reserved.
  */
 
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
-import ViewEvent from './pages/ViewEvent';
-import CreateEvent from './pages/CreateEvent';
+import Home from '../pages/Home';
+import Login from '../pages/Login';
+import Register from '../pages/Register';
+import Dashboard from '../pages/Dashboard';
+import ViewEvent from '../pages/ViewEvent';
+import CreateEvent from '../pages/CreateEvent';
 
 const routes = {
   Home: {

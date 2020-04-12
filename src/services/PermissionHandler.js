@@ -7,8 +7,8 @@
 import React from 'react';
 import { Redirect, matchPath } from 'react-router-dom';
 
-import routes from '../routes';
-import permissionFunctions from '../utils/permissions';
+import routes from '../config/routes';
+import permissionFunctions from '../config/permissions';
 
 class PermissionHandler {
   constructor(user, history) {
