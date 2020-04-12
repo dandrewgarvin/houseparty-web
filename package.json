@@ -1,0 +1,73 @@
+{
+  "name": "houseparty-web",
+  "version": "0.1.0",
+  "private": true,
+  "author": {
+    "name": "Andrew Garvin",
+    "email": "me@andrewgarv.in",
+    "url": "https://andrewgarv.in"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "react-scripts start",
+    "build:dev": "dotenv -e .env.development && npm run build",
+    "build": "react-scripts build",
+    "lint": "eslint src",
+    "format": "npm run prettier -- --write",
+    "precommit": "lint-staged",
+    "prettier": "prettier \"**/*.+(ts|js|jsx|json|yml|yaml|scss|css)\"",
+    "validate": "npm run lint && npm run prettier -- --list-different"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/node": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.6.2",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "apollo-boost": "^0.4.7",
+    "apollo-cache-inmemory": "^1.6.3",
+    "apollo-client": "^2.6.8",
+    "apollo-link-http": "^1.5.16",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1",
+    "history": "^4.10.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "node-sass": "^4.13.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@testing-library/jest-dom": "^4.2.4",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-jest": "^23.1.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.15.1",
+    "husky": "^3.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.18.2"
+  }
+}
