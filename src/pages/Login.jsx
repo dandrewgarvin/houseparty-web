@@ -5,7 +5,6 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 
 function Login() {
   return (
@@ -14,7 +13,5 @@ function Login() {
     </section>
   );
 }
-
-Login.propTypes = {};
 
 export default Login;

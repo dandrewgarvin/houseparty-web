@@ -5,7 +5,6 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 
 function Register() {
   return (
@@ -14,7 +13,5 @@ function Register() {
     </section>
   );
 }
-
-Register.propTypes = {};
 
 export default Register;

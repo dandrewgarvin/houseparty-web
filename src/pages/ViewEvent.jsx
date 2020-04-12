@@ -5,7 +5,6 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function ViewEvent() {
@@ -16,7 +15,5 @@ function ViewEvent() {
     </section>
   );
 }
-
-ViewEvent.propTypes = {};
 
 export default ViewEvent;

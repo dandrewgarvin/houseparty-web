@@ -5,7 +5,6 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function CreateEvent() {
@@ -16,7 +15,5 @@ function CreateEvent() {
     </section>
   );
 }
-
-CreateEvent.propTypes = {};
 
 export default CreateEvent;

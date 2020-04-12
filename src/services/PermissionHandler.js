@@ -11,22 +11,12 @@ import routes from '../config/routes';
 import permissionFunctions from '../config/permissions';
 
 class PermissionHandler {
-  constructor(user, history) {
-    this.user = user;
+  constructor(state, history) {
+    this.state = state;
     this.history = history;
-
-    this.state = {
-      events: [
-        {
-          id: 'event:123',
-          host_id: 'user:7',
-          members: [{ id: 'user:7' }],
-        },
-      ],
-    };
   }
 
-  generateRoutes = () => {
+  generateRoutes = additionalProps => {
     // map over each route object, and render either the public component or private component
     // based on whether all the permission requirements are met or not.
     return Object.values(routes)
@@ -34,10 +24,10 @@ class PermissionHandler {
         path: Route.path,
         component: props => {
           if (this.checkPermissions(Route, props)) {
-            return <Route.privateComponent />;
+            return <Route.privateComponent {...additionalProps} />;
           } else {
             return Route.publicComponent ? (
-              <Route.publicComponent />
+              <Route.publicComponent {...additionalProps} />
             ) : (
               <Redirect to={routes.Home.path} />
             );
@@ -45,7 +35,15 @@ class PermissionHandler {
         },
       }))
       .map((route, index) => {
-        return <Route exact key={index} path={route.path} component={route.component} />;
+        return (
+          <Route
+            exact
+            key={index}
+            path={route.path}
+            component={route.component}
+            {...additionalProps}
+          />
+        );
       });
   };
 
@@ -63,7 +61,7 @@ class PermissionHandler {
       const breakdown = permission.split(':');
 
       // run the permission function based on the permission type
-      const perms = permissionFunctions(this.user, this.state); // TODO: change how this.state is passed in
+      const perms = permissionFunctions(this.state);
 
       const match = matchPath(props.location.pathname, {
         path: props.match.path,

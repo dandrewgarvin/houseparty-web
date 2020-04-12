@@ -6,7 +6,13 @@
 
 // ========== INITIAL STATE ========= //
 const initialEventState = {
-  events: [],
+  events: [
+    {
+      id: 'event:123',
+      host_id: 'user:7',
+      members: [{ id: 'user:7' }],
+    },
+  ],
 };
 
 // ========== ACTION TYPES ========== //
