@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { Redirect, matchPath } from 'react-router-dom';
+import { Route, Redirect, matchPath } from 'react-router-dom';
 
 import routes from '../config/routes';
 import permissionFunctions from '../config/permissions';
@@ -29,20 +29,24 @@ class PermissionHandler {
   generateRoutes = () => {
     // map over each route object, and render either the public component or private component
     // based on whether all the permission requirements are met or not.
-    return Object.values(routes).map(Route => ({
-      path: Route.path,
-      component: props => {
-        if (this.checkPermissions(Route, props)) {
-          return <Route.privateComponent />;
-        } else {
-          return Route.publicComponent ? (
-            <Route.publicComponent />
-          ) : (
-            <Redirect to={routes.Home.path} />
-          );
-        }
-      },
-    }));
+    return Object.values(routes)
+      .map(Route => ({
+        path: Route.path,
+        component: props => {
+          if (this.checkPermissions(Route, props)) {
+            return <Route.privateComponent />;
+          } else {
+            return Route.publicComponent ? (
+              <Route.publicComponent />
+            ) : (
+              <Redirect to={routes.Home.path} />
+            );
+          }
+        },
+      }))
+      .map((route, index) => {
+        return <Route exact key={index} path={route.path} component={route.component} />;
+      });
   };
 
   checkPermissions = (route, props) => {
