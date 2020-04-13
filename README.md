@@ -1,4 +1,4 @@
-# HouseParty Apps
+# HouseParty Web App
 
 ## TODO
 
