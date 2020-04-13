@@ -54,10 +54,7 @@ class PermissionHandler {
       return null;
     }
 
-    // does user meet all requirements to access the route?
-    let hasPermissions = true;
-
-    permissions.forEach(permission => {
+    for (let permission of permissions) {
       const breakdown = permission.split(':');
 
       // run the permission function based on the permission type
@@ -75,13 +72,14 @@ class PermissionHandler {
         result = perms[breakdown[0]][breakdown[1]]();
       }
 
+      // user does not have permissions. end loop early since the rest of the permissions don't matter
       if (!result) {
-        hasPermissions = result;
+        return false;
       }
-    });
+    }
 
-    // if true, the generator function will render the private route because the user has all permissions
-    return hasPermissions;
+    // the user has met all of the requirements for the route
+    return true;
   };
 }
 
