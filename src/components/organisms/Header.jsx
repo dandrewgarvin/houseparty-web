@@ -15,7 +15,12 @@ import Image from '../atoms/Image';
 function Header({ user }) {
   return (
     <header className={`Header${user ? ' Header--inverted' : ''}`}>
-      <Logo modifier={user ? 'inverted' : null} />
+      <Logo
+        action={() => {
+          console.log('clicked logo');
+        }}
+        modifier={user ? 'inverted' : null}
+      />
 
       {user ? (
         <div className="Header__actions">
@@ -30,14 +35,15 @@ function Header({ user }) {
               console.log('clicked login');
             }}
             label="Login"
-            modifiers={['inverted']}
+            modifiers={['inverted', 'max-height']}
           />
 
           <Button
             action={() => {
               console.log('clicked create party');
             }}
-            label="Create Party"
+            label="Create a Party"
+            modifiers={['max-height']}
           />
         </div>
       )}

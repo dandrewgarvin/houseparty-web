@@ -2,10 +2,12 @@
 
 // ======= PRIMARY ====== //
 $palered: #b75d69;
+$teal: #70cad1;
 
 // ===== GRAY SCALE ===== //
 $white: #fff;
-$lightgray: #adbcd3;
+$lightgray: #edf3f4;
+$black: #2c2c2c;
 
 // ========== SIZING ========== //
 
@@ -18,3 +20,4 @@ $desktop-xl: 2560px;
 
 // ==== COMPONENTS ==== //
 $header-height: 60px;
+$page-height: calc(100% - #{$header-height});
