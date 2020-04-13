@@ -17,4 +17,20 @@
     align-items: center;
     justify-content: flex-end;
   }
+
+  &__hamburger {
+    display: none;
+  }
+}
+
+@media (max-width: $tablet) {
+  .Header {
+    &__actions {
+      display: none;
+    }
+
+    &__hamburger {
+      display: block;
+    }
+  }
 }
