@@ -12,3 +12,4 @@
 - [ ] Add metadata
 - [ ] Add favicon
 - [ ] Hook up login and get started buttons
+- [ ] Look at routes.js and PermissionHandler to figure out better solutions for handling route-wide permissions, including handler methods on private routes, permission-type constants, multiple optional permission sets to check against, and returning which permissions were met in order to allow pages to then render content only available to specific entities

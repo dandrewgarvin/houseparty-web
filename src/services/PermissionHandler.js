@@ -75,6 +75,12 @@ class PermissionHandler {
       // user does not have permissions. end loop early since the rest of the permissions don't matter
       if (!result) {
         return false;
+        // TODO: if we modify the component to return an object with which permissions were met and which weren't, that allows us to use the checkPermissions function _inside_ routes to enable them to conditionally render elements.
+        // an example of this would be the ViewEvent page, which would display an edit button for the host, but not for normal members. The page, on render, would check to see if the object returned by checkPermissions contains `event:host`, and if it's true. in that case, show the edit
+        // return {
+        //   'user:auth': true,
+        //   'event:host': false
+        // }
       }
     }
 
