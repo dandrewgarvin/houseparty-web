@@ -2,6 +2,7 @@
 @import './reset.css';
 
 // ============ GLOBALS ============ //
+@import './partials/fonts.scss';
 @import './partials/variables.scss';
 @import './partials/globals.scss';
 @import './partials/mixins.scss';
@@ -9,9 +10,13 @@
 // ========== COMPONENTS ========== //
 // ======= ATOMS ======= //
 @import './components/atoms/Button.scss';
+@import './components/atoms/Logo.scss';
+@import './components/atoms/Text.scss';
+@import './components/atoms/Image.scss';
 
 // ===== MOLECULES ===== //
 // ===== ORGANISMS ===== //
+@import './components/organisms/Header.scss';
 
 // ============ PAGES ============ //
 @import './pages/CreateEvent.scss';

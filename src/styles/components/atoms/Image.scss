@@ -1,0 +1,9 @@
+.Image {
+  background: $white;
+  min-height: 35px;
+  min-width: 35px;
+
+  &--rounded {
+    border-radius: 100%;
+  }
+}

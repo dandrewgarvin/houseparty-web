@@ -7,24 +7,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Button({ action, label, modifiers, className }) {
+function Text({ action, label, modifiers, className }) {
   return (
-    <button
-      className={`Button ${modifiers ? modifiers.map(mod => `Button--${mod}`).join(' ') : ''}${
+    <p
+      className={`Text ${modifiers ? modifiers.map(mod => `Text--${mod}`).join(' ') : ''}${
         className ? ` ${className}` : ''
       }`}
       onClick={action}
     >
       {label}
-    </button>
+    </p>
   );
 }
 
-Button.propTypes = {
-  action: PropTypes.func.isRequired,
+Text.propTypes = {
+  action: PropTypes.func,
   label: PropTypes.string.isRequired,
   modifiers: PropTypes.array,
   className: PropTypes.string,
 };
 
-export default Button;
+export default Text;

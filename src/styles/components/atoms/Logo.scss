@@ -1,0 +1,11 @@
+.Logo {
+  text {
+    fill: $palered;
+  }
+
+  &--inverted {
+    text {
+      fill: $white;
+    }
+  }
+}

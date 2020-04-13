@@ -5,14 +5,16 @@
  */
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-function Dashboard() {
+function Dropdown() {
   return (
-    <section id="Dashboard">
-      <Link to="/events/event:123">Events</Link>
+    <section id="Dropdown">
+      <h1>Dropdown Atom</h1>
     </section>
   );
 }
 
-export default Dashboard;
+Dropdown.propTypes = {};
+
+export default Dropdown;

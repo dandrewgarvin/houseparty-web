@@ -1,0 +1,17 @@
+.Header {
+  padding: 0px 20px;
+  height: $header-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &--inverted {
+    background: $palered;
+  }
+
+  &__actions {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}

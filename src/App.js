@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
 import { Switch } from 'react-router-dom';
 
-import history from './utils/history';
-
 import routes from './config/routes';
+
+import history from './utils/history';
 
 import PermissionHandler from './services/PermissionHandler';
 import { store } from './services/Store';
+
+import { Header } from './components';
 
 import './styles/main.scss';
 
@@ -17,6 +19,8 @@ function App() {
 
   return (
     <main id="App">
+      <Header user={context.state.user} />
+
       <Switch>{RouteHandler.generateRoutes({ context, routes })}</Switch>
     </main>
   );

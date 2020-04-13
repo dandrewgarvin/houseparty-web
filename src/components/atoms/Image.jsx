@@ -7,24 +7,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Button({ action, label, modifiers, className }) {
+function Image({ src, alt, modifiers, className, action }) {
   return (
-    <button
-      className={`Button ${modifiers ? modifiers.map(mod => `Button--${mod}`).join(' ') : ''}${
+    <img
+      className={`Image ${modifiers ? modifiers.map(mod => `Image--${mod}`).join(' ') : ''}${
         className ? ` ${className}` : ''
       }`}
+      src={src || ''}
+      alt={alt}
       onClick={action}
-    >
-      {label}
-    </button>
+    />
   );
 }
 
-Button.propTypes = {
-  action: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired,
+Image.propTypes = {
+  src: PropTypes.string,
+  alt: PropTypes.string,
   modifiers: PropTypes.array,
   className: PropTypes.string,
+  action: PropTypes.func,
 };
 
-export default Button;
+export default Image;

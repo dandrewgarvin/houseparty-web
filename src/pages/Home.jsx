@@ -8,7 +8,9 @@ import React, { useCallback } from 'react';
 
 import { API, Queries } from '../services/NetworkManager';
 
-function Home({ context, history, routes }) {
+import Button from '../components/atoms/Button';
+
+function Home({ context }) {
   const getUser = useCallback(async () => {
     const response = await API.query({
       query: Queries.GET_USER,
@@ -22,16 +24,12 @@ function Home({ context, history, routes }) {
 
     if (user) {
       await context.dispatch({ type: 'ADD_USER', payload: user });
-
-      history.push(routes.Home.path);
     }
-  }, []);
+  }, [context]);
 
   return (
     <section id="Home">
-      <h1>Home Section</h1>
-
-      <button onClick={getUser}>Get User</button>
+      <Button action={getUser} label="Get User" />
     </section>
   );
 }
