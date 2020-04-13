@@ -7,3 +7,7 @@
 - [ ] Add dev logging in permission checking
 - [ ] Add devtools to handle dev toggles (including logging)
 - [ ] Add hamburger menu to mobile header
+- [ ] Add testing on basic components
+- [ ] Set up on Netlify
+- [ ] Add metadata
+- [ ] Add favicon
