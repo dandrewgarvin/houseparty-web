@@ -7,7 +7,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { ReactComponent as HousePartyLogo } from '../../images/Logo.svg';
+import { ReactComponent as HousePartyLogo } from '../../images/logo.svg';
 
 function Logo({ modifier, action }) {
   return <HousePartyLogo onClick={action} className={`Logo${modifier ? `--${modifier}` : ''}`} />;
